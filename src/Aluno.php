@@ -8,5 +8,5 @@ class Aluno
 {
 	private int $cpf;
 	private string $nome;
-	private string $email;
+	private Email $email;
 }
