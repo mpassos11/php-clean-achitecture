@@ -1,5 +1,6 @@
 <?php
 
+namespace Alura\Arquitetura\Testes\Dominio\Aluno;
 
 use Alura\Arquitetura\Dominio\Email;
 use PHPUnit\Framework\TestCase;
@@ -8,7 +9,7 @@ class EmailTest extends TestCase
 {
 	public function testEmailNoFormatoInvalidadoNaoDevePoderExistir()
 	{
-		$this->expectException(InvalidArgumentException::class);
+		$this->expectException(\InvalidArgumentException::class);
 		new Email('email invalido');
 	}
 	
