@@ -38,11 +38,61 @@ class RespositorioAlunoPDO implements RepositorioAluno
 	
 	public function buscarPorCpf(CPF $cpf): Aluno
 	{
-		// TODO: Implement buscarPorCpf() method.
+		$sql = 'SELECT cpf, nome, email, ddd, numero as numero_telefone
+				FROM alunos
+				LEFT JOIN telefones ON telefones.cpf_aluno = alunos.cpf
+				WHERE alunos.cpf = ?';
+		$stmt = $this->conexao->prepare($sql);
+		$stmt->bindValue(1, (string) $cpf);
+		$stmt->execute();
+		
+		$dadosAluno = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+		if (count($dadosAluno) == 0) {
+			throw new AlunoNaoEncontrado($cpf);
+		}
+		
+		return $this->mapearAluno($dadosAluno);
 	}
 	
 	public function buscarTodos(): array
 	{
-		// TODO: Implement buscarTodos() method.
+		$sql = 'SELECT cpf, nome, email, ddd, numero as numero_telefone
+				FROM alunos
+				LEFT JOIN telefones ON telefones.cpf_aluno = alunos.cpf';
+		$stmt = $this->conexao->prepare($sql);
+		
+		$listaDadosAlunos = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+		
+		$alunos = [];
+		foreach ($listaDadosAlunos as $dadosAluno) {
+			if (!array_key_exists($dadosAluno['cpf'], $alunos)) {
+				$alunos[$dadosAluno['cpf']] = Aluno::comCpfNomeEmail(
+					$dadosAluno['cpf'],
+					$dadosAluno['nome'],
+					$dadosAluno['email']
+				);
+			}
+			
+			if ($dadosAluno['ddd'] !== null && $dadosAluno['numero_telefone'] !== null) {
+				$alunos[$dadosAluno['cpf']]->addTelefone($dadosAluno['ddd'], $dadosAluno['numero_telefone']);
+			}
+		}
+		
+		return array_values($alunos);
+	}
+	
+	private function mapearAluno(array $dadosAluno): Aluno
+	{
+		$primeiraLinha = $dadosAluno[0];
+		$aluno = Aluno::comCpfNomeEmail($primeiraLinha['cpf'], $primeiraLinha['nome'], $primeiraLinha['email']);
+		$telefones = array_filter(
+			$dadosAluno,
+			fn ($linha) => $linha['ddd'] !== null && $linha['numero_telefone'] !== null
+		);
+		foreach ($telefones as $telefone) {
+			$aluno->addTelefone($telefone['ddd'], $telefone['numero_telefone']);
+		}
+		
+		return $aluno;
 	}
 }
