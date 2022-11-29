@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Alura\Arquitetura\Aluno;
+namespace Alura\Arquitetura\Dominio\Aluno;
 
 
 class Telefone

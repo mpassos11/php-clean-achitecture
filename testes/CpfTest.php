@@ -1,7 +1,7 @@
 <?php
 
 
-use Alura\Arquitetura\CPF;
+use Alura\Arquitetura\Dominio\CPF;
 use PHPUnit\Framework\TestCase;
 
 class CpfTest extends TestCase
