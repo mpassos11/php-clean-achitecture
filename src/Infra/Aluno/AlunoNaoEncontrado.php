@@ -1,5 +1,6 @@
 <?php
 
+namespace Alura\Arquitetura\Infra\Aluno;
 
 use Alura\Arquitetura\Dominio\CPF;
 
