@@ -31,6 +31,10 @@ class Aluno
 	
 	public function addTelefone(string $ddd, string $numero): self
 	{
+		if (count($this->telefones) === 2) {
+			throw new \DomainException('Aluno já tem 2 telefones e por isso não pode adicionar outro telefone');
+		}
+		
 		$this->telefones[] = new Telefone($ddd, $numero);
 		return $this;
 	}
