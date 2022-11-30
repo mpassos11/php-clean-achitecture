@@ -1,7 +1,8 @@
 <?php
 
+namespace Alura\Arquitetura\Gamificacao\Aplicacao;
 
-use Alura\Arquitetura\Academico\Dominio\Selo\RepositorioSelo;
+use Alura\Arquitetura\Gamificacao\Dominio\Selo\RepositorioSelo;
 use Alura\Arquitetura\Gamificacao\Dominio\Selo\Selo;
 use Alura\Arquitetura\Shared\Dominio\Evento\Evento;
 use Alura\Arquitetura\Shared\Dominio\Evento\OuvinteDeEvento;

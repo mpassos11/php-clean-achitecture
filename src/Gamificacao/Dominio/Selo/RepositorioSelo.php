@@ -1,11 +1,10 @@
 <?php
 
 
-namespace Alura\Arquitetura\Academico\Dominio\Selo;
+namespace Alura\Arquitetura\Gamificacao\Dominio\Selo;
 
 
 use Alura\Arquitetura\Shared\Dominio\CPF;
-use Alura\Arquitetura\Gamificacao\Dominio\Selo\Selo;
 
 interface RepositorioSelo
 {

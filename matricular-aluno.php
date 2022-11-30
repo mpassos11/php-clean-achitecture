@@ -4,6 +4,7 @@ use Alura\Arquitetura\Academico\App\Aluno\MatricularAluno;
 use Alura\Arquitetura\Academico\App\Aluno\MatricularAlunoDTO;
 use Alura\Arquitetura\Academico\Dominio\Aluno\LogDeAlunoMatriculado;
 use Alura\Arquitetura\Academico\Infra\Aluno\RespositorioAlunoMemoria;
+use Alura\Arquitetura\Gamificacao\Aplicacao\GeraSeloNovato;
 use Alura\Arquitetura\Gamificacao\Infra\Selo\SeloRepositorioMemoria;
 use Alura\Arquitetura\Shared\Dominio\Evento\PublicadorDeEvento;
 
