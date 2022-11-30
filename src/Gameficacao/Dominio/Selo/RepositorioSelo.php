@@ -4,7 +4,8 @@
 namespace Alura\Arquitetura\Academico\Dominio\Selo;
 
 
-use Alura\Arquitetura\Academico\Dominio\CPF;
+use Alura\Arquitetura\Shared\Dominio\CPF;
+use Alura\Arquitetura\Gamificacao\Dominio\Selo\Selo;
 
 interface RepositorioSelo
 {

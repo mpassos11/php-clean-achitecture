@@ -4,9 +4,9 @@
 namespace Alura\Arquitetura\Gamificacao\Infra\Selo;
 
 
-use Alura\Arquitetura\Academico\Dominio\CPF;
+use Alura\Arquitetura\Shared\Dominio\CPF;
 use Alura\Arquitetura\Academico\Dominio\Selo\RepositorioSelo;
-use Alura\Arquitetura\Academico\Dominio\Selo\Selo;
+use Alura\Arquitetura\Gamificacao\Dominio\Selo\Selo;
 
 class SeloRepositorioMemoria implements RepositorioSelo
 {

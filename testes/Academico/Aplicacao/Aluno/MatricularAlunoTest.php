@@ -4,9 +4,9 @@
 namespace Alura\Arquitetura\Academico\Testes\Aplicacao\Aluno;
 
 
-use Alura\Arquitetura\Academico\App\MatricularAluno;
-use Alura\Arquitetura\Academico\App\MatricularAlunoDTO;
-use Alura\Arquitetura\Academico\Dominio\CPF;
+use Alura\Arquitetura\Academico\App\Aluno\MatricularAluno;
+use Alura\Arquitetura\Academico\App\Aluno\MatricularAlunoDTO;
+use Alura\Arquitetura\Shared\Dominio\CPF;
 use Alura\Arquitetura\Academico\Infra\Aluno\RespositorioAlunoMemoria;
 use PHPUnit\Framework\TestCase;
 
