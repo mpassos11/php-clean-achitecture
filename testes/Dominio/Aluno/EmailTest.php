@@ -1,8 +1,8 @@
 <?php
 
-namespace Alura\Arquitetura\Testes\Dominio\Aluno;
+namespace Alura\Arquitetura\Academico\Testes\Dominio\Aluno;
 
-use Alura\Arquitetura\Dominio\Email;
+use Alura\Arquitetura\Academico\Dominio\Email;
 use PHPUnit\Framework\TestCase;
 
 class EmailTest extends TestCase

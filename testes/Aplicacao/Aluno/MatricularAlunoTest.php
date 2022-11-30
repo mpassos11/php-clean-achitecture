@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Alura\Arquitetura\Testes\Aplicacao\Aluno;
+namespace Alura\Arquitetura\Academico\Testes\Aplicacao\Aluno;
 
 
-use Alura\Arquitetura\App\MatricularAluno;
-use Alura\Arquitetura\App\MatricularAlunoDTO;
-use Alura\Arquitetura\Dominio\CPF;
-use Alura\Arquitetura\Infra\Aluno\RespositorioAlunoMemoria;
+use Alura\Arquitetura\Academico\App\MatricularAluno;
+use Alura\Arquitetura\Academico\App\MatricularAlunoDTO;
+use Alura\Arquitetura\Academico\Dominio\CPF;
+use Alura\Arquitetura\Academico\Infra\Aluno\RespositorioAlunoMemoria;
 use PHPUnit\Framework\TestCase;
 
 class MatricularAlunoTest extends TestCase
